@@ -1,25 +1,30 @@
 ---
 title       : Getting Started
-description : Creating a map
+description : Setting up folium
 attachments :
+  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
 --- type:MultipleChoiceExercise lang:python xp:50 skills:1 key:1c52a71a3c
-## Displaying a map
+## A really bad movie
 
-Folium is a way to render Leaflet.js maps writing in python.
-Let's first get a map created
+Have a look at the plot that showed up in the viewer to the right. Which type of movies have the worst rating assigned to them?
 
 *** =instructions
-- import folium
-- call your map 
+- Long movies, clearly
+- Short movies, clearly
+- Long movies, but the correlation seems weak
+- Short movies, but the correlation seems weak
 
 *** =hint
-Did you set the coordinates for the map? What order were they? Were they longitude and latitude?
+Have a look at the plot. Do you see a trend in the dots?
 
 *** =pre_exercise_code
-```{python}
+```{r}
+# The pre exercise code runs code to initialize the user's workspace. You can use it for several things:
+
 # 1. Pre-load packages, so that users don't have to do this manually.
-import folium
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # 2. Preload a dataset. The code below will read the csv that is stored at the URL's location.
 # The movies variable will be available in the user's console.
@@ -46,25 +51,30 @@ test_mc(4, [msg_bad, msg_bad, msg_bad, msg_success])
 ```
 
 --- type:MultipleChoiceExercise lang:python xp:50 skills:1 key:1c52a71a3c
-## Setting the zoom level
+## A really bad movie
 
 Have a look at the plot that showed up in the viewer to the right. Which type of movies have the worst rating assigned to them?
 
 *** =instructions
 - Long movies, clearly
 - Short movies, clearly
+- Long movies, but the correlation seems weak
+- Short movies, but the correlation seems weak
 
 *** =hint
 Have a look at the plot. Do you see a trend in the dots?
 
 *** =pre_exercise_code
 ```{python}
+# The pre exercise code runs code to initialize the user's workspace. You can use it for several things:
+
 # 1. Pre-load packages, so that users don't have to do this manually.
 import pandas as pd
-import folium
+import matplotlib.pyplot as plt
 
 # 2. Preload a dataset. The code below will read the csv that is stored at the URL's location.
 # The movies variable will be available in the user's console.
+movies = pd.read_csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
 
 # 3. Create a plot in the viewer, that students can check out while reading the exercise
 plt.scatter(movies.runtime, movies.rating)
@@ -87,7 +97,7 @@ test_mc(4, [msg_bad, msg_bad, msg_bad, msg_success])
 ```
 
 --- type:NormalExercise lang:python xp:100 skills:1 key:6a1fd8bd62
-## Change the type of map used
+## Plot the movies yourself
 
 Do you remember the plot of the last exercise? Let's make an even cooler plot!
 
